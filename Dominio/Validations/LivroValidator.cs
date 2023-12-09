@@ -10,6 +10,8 @@ namespace Dominio.Validations
 {
     public class LivroValidator : AbstractValidator<Livro>
     {
-        public LivroValidator() { }        
+        public LivroValidator() {
+            
+        }        
     }
 }

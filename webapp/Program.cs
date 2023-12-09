@@ -1,9 +1,11 @@
 using Infra.Repositories;
 using Dominio.Validations;
+using Infra.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IRepository, LivroRepository>();
 builder.Services.AddScoped<LivroValidator>();
+builder.Services.AddScoped<LivroContext>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
