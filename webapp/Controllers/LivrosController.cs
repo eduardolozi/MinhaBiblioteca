@@ -38,6 +38,7 @@ namespace webapp.Controllers
             {
                 var livro = _repo.ObterPorId(id);
                 if(livro == null) return NotFound();
+                
                 return Ok(livro);
             }catch (Exception)
             {
@@ -50,11 +51,13 @@ namespace webapp.Controllers
         {
             try
             {
+                ValidationResult resultado = _validacao.Validate(livro);
+                if (!resultado.IsValid) throw new Exception(resultado.ToString());
                 _repo.Adicionar(livro);
                 return Ok(livro);
-            }catch(Exception)
+            }catch(Exception e)
             {
-                return BadRequest();
+                return BadRequest(e.Message);
             }
         }
 
@@ -65,6 +68,8 @@ namespace webapp.Controllers
             {
                 if (_repo.ObterPorId(id) == null) throw new Exception("Id não encontrado");
                 livro.LivroId = id;
+                ValidationResult resultado = _validacao.Validate(livro);
+                if (!resultado.IsValid) throw new Exception(resultado.ToString());
                 _repo.Atualizar(livro);
                 return Ok(livro);
             }

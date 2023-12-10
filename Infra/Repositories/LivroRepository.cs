@@ -2,6 +2,7 @@
 using Infra.Database;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,7 @@ namespace Infra.Repositories
         }
         public void Adicionar(Livro livro)
         {
-            using(_context)
+            using (_context)
             {
                 _context.Add<Livro>(livro);
                 _context.SaveChanges();
@@ -36,7 +37,7 @@ namespace Infra.Repositories
             using (_context)
             {
                 var livroASerAtualizado = _context.Livros.Where(p => p.LivroId == livroAtualizado.LivroId).FirstOrDefault();
-                if(livroASerAtualizado != null)
+                if (livroASerAtualizado != null)
                 {
                     _context.Entry(livroASerAtualizado).CurrentValues.SetValues(livroAtualizado);
                     _context.SaveChanges();
