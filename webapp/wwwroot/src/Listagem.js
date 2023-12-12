@@ -5,14 +5,14 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
-import foto1 from "./Imagens/knulp.jpg"
-import foto2 from "./Imagens/confissoes.jpg"
-import foto3 from "./Imagens/HP.jpg"
+import foto1 from "./Imagens/HP.jpg"
+import foto2 from "./Imagens/knulp.jpg"
+import foto3 from "./Imagens/confissoes.jpg"
 import Typography from "@mui/material/Typography";
 
 export default function AlignItemsList() {
   return (
-    <List sx={{ width: "100%", maxWidth: "100", bgcolor: "background.paper" }}>
+    <List sx={{ width: "80%", maxWidth: "100", bgcolor: "background.paper" }}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
           <Avatar alt="Remy Sharp" src={foto1} />
