@@ -32,7 +32,7 @@ namespace Dominio.Validations
                 .IsInEnum().WithMessage(MensagensDeErro.GENERO_NAO_EXISTENTE);
 
             RuleFor(x => x.QuantidadeDePaginas)
-                .LessThan(49).WithMessage(MensagensDeErro.QTD_PAGINAS_INVALIDAS);
+                .GreaterThan(49).WithMessage(MensagensDeErro.QTD_PAGINAS_INVALIDAS);
         }
 
     }

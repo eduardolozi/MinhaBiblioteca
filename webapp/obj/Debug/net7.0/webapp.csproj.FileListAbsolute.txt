@@ -78,3 +78,6 @@ C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoApiRest\webapp\obj\Debug\net7.0\r
 C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoApiRest\webapp\obj\Debug\net7.0\webapp.pdb
 C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoApiRest\webapp\obj\Debug\net7.0\webapp.genruntimeconfig.cache
 C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoApiRest\webapp\obj\Debug\net7.0\ref\webapp.dll
+C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoAPIREST\webapp\bin\Debug\net7.0\package-lock.json
+C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoAPIREST\webapp\bin\Debug\net7.0\package.json
+C:\Users\eduar\OneDrive\Documentos\ESTUDOS\ToDoAPIREST\webapp\bin\Debug\net7.0\webapp.staticwebassets.runtime.json

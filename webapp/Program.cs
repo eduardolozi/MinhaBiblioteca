@@ -1,6 +1,8 @@
 using Infra.Repositories;
 using Dominio.Validations;
 using Infra.Database;
+using Microsoft.AspNetCore.StaticFiles;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<IRepository, LivroRepository>();

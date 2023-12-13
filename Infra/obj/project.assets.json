@@ -3553,7 +3553,7 @@
       "projectName": "Infra",
       "projectPath": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoApiRest\\Infra\\Infra.csproj",
       "packagesPath": "C:\\Users\\eduar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoApiRest\\Infra\\obj\\",
+      "outputPath": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoAPIREST\\Infra\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

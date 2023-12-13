@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "V7sYswyv+nf5ZroFXnfTilcTNwFfvqs2fzxNSS7Bnfo=",
+  "Hash": "wo7/Fpq7EzVCoOsPL9V+gHYdeNow/GNauy5xV/7LrlM=",
   "Source": "webapp",
   "BasePath": "_content/webapp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "webapp\\wwwroot",
+      "Source": "webapp",
+      "ContentRoot": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoApiRest\\webapp\\wwwroot\\",
+      "BasePath": "_content/webapp",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
