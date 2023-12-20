@@ -1,9 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,react,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,react,node
 
-**/bin
+ToDoAPIREST/webapp/bin
 **/obj
-ToDoAPIREST/com.myorg.myui5app
+
 
 ### Node ###
 # Logs
