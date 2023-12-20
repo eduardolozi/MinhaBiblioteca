@@ -1,8 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,react,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,react,node
 
-ToDoAPIREST/webapp/bin/*
-ToDoAPIREST/webapp/obj/*
+ToDoAPIREST/webapp/bin/
+ToDoAPIREST/webapp/obj/
 
 
 ### Node ###
