@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AXkBlVKyj/6Rjp2Psnc1Wv6SXcaPrfh+7410y5GTBJpo+0bDVKRabT5rdTUUGmW4Jl8sm2xIie4wXxNza3wUTw==",
+  "dgSpecHash": "VV4xUCOfnlSgECTmqUPG1k8wVi9cPKAFz6gssPmvXE44DqTbxKyr9nnOhlq6JSwbXzu7B/bB7QhiaRH/aKW5Fg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoApiRest\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Users\\eduar\\OneDrive\\Documentos\\ESTUDOS\\ToDoAPIREST\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eduar\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\eduar\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

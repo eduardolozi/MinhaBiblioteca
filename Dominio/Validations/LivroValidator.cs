@@ -20,7 +20,7 @@ namespace Dominio.Validations
             RuleFor(x => x.Autor)
                 .NotEmpty().WithMessage(MensagensDeErro.GeraErroCampoVazio("Autor"))
                 .NotNull().WithMessage(MensagensDeErro.GeraErroCampoNulo("Autor"))
-                .Matches(@"^[a-zA-Z]*$").WithMessage(MensagensDeErro.ACEITA_APENAS_LETRAS_E_ESPACOS);
+                .Matches(@"^[a-zA-Z\s.]+$").WithMessage(MensagensDeErro.ACEITA_APENAS_LETRAS_E_ESPACOS);
 
             RuleFor(x => x.DataDePublicao)
                 .GreaterThan(DateTime.Now).WithMessage(MensagensDeErro.DATA_MAIOR);

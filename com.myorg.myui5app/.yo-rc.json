@@ -1,0 +1,15 @@
+{
+  "generator-template-ui5-project": {
+    "viewtype": "XML",
+    "projectname": "myui5app",
+    "namespaceUI5": "com.myorg",
+    "enableFPM": true,
+    "enableTypescript": false,
+    "enableFioriTools": false,
+    "platform": "Static webserver",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": true,
+    "initrepo": false,
+    "namespaceURI": "com/myorg"
+  }
+}

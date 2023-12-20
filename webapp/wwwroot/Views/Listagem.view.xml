@@ -1,0 +1,58 @@
+<mvc:View
+  controllerName="webapp.Controllers.Listagem"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+>
+  <App id="app">
+    <Page>
+      <customHeader>
+        <Toolbar>
+          <Title text="KNOWLED" class="sapUiTinyMarginBegin"/>
+          <ToolbarSpacer/>
+          <Button icon="sap-icon://add-coursebook" text="Adicionar livro"/>
+        </Toolbar>
+      </customHeader>
+
+      <FlexBox class="sapUiMediumMarginEnd sapUiMediumMarginTop sapUiMediumMarginBegin">
+        <FlexBox justifyContent="Start" alignItems="Start" width="100%" >
+            <List id="listaDeLivrosLidos"
+                  headerText="Livros lidos"
+                  items="{livrosLidos>/}"
+                  growing="true">
+                  
+                  <Title text="Livros para ler"/>
+                  <!-- <OverflowToolbar>
+                    <SearchField width="50%"/>
+                    <Label icon="sap-icon://search"/>
+                  </OverflowToolbar> -->
+                  
+                  <StandardListItem title="{livrosLidos>titulo}"/>
+                  <layoutData>
+                      <FlexItemData growFactor="0" baseSize="90%" />
+                  </layoutData>
+            </List>
+        </FlexBox>
+
+        <FlexBox justifyContent="End" alignItems="Start" width="100%">
+            <List id="listaDeLivrosParaLer"
+                  headerText="Livros para ler"
+                  items="{livrosParaLer>/}"
+                  growing="true">
+                  
+                  <Title text="Livros para ler"/>
+                  <!-- <OverflowToolbar>
+                    <SearchField width="50%"/>
+                  </OverflowToolbar> -->
+                  
+                  <StandardListItem 
+                    title="{livrosParaLer>titulo}"/>
+                  <layoutData>
+                      <FlexItemData growFactor="0" baseSize="90%" />
+                  </layoutData>
+            </List>
+        </FlexBox>
+      </FlexBox>
+      
+    </Page>
+  </App>
+</mvc:View>

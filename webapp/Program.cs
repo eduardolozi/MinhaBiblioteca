@@ -22,6 +22,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+                   Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")
+               ),
+    ContentTypeProvider = new FileExtensionContentTypeProvider
+    {
+        Mappings = { [".properties"] = "application/x-msdownload" }
+    }
+});
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
