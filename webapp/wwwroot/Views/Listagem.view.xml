@@ -13,7 +13,7 @@
         </Toolbar>
       </customHeader>
 
-      <FlexBox class="sapUiMediumMarginEnd sapUiMediumMarginTop sapUiMediumMarginBegin">
+      <FlexBox class="sapUiMediumMarginEnd sapUiMediumMarginTop sapUiMediumMarginBegin sapUiMediumMarginBottom">
         <FlexBox justifyContent="Start" alignItems="Start" width="100%" >
             <List id="listaDeLivrosLidos"
                   headerText="Livros lidos"
@@ -25,8 +25,13 @@
                     <SearchField width="50%"/>
                     <Label icon="sap-icon://search"/>
                   </OverflowToolbar> -->
-                  
-                  <StandardListItem title="{livrosLidos>titulo}"/>
+                  <items>
+                    <StandardListItem 
+                      title="{livrosLidos>titulo}"
+                      description="{livrosLidos>autor}"
+                      press=".aoPressionarLivroLidos"
+                      type="Navigation"/>
+                  </items>
                   <layoutData>
                       <FlexItemData growFactor="0" baseSize="90%" />
                   </layoutData>
@@ -43,9 +48,13 @@
                   <!-- <OverflowToolbar>
                     <SearchField width="50%"/>
                   </OverflowToolbar> -->
-                  
-                  <StandardListItem 
-                    title="{livrosParaLer>titulo}"/>
+                  <items>
+                    <StandardListItem 
+                      title="{livrosParaLer>titulo}"
+                      description="{livrosParaLer>autor}"
+                      press=".aoPressionarLivroParaLer"
+                      type="Navigation"/>
+                  </items>
                   <layoutData>
                       <FlexItemData growFactor="0" baseSize="90%" />
                   </layoutData>

@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+
+   <Dialog id="fragmentoDeDetalhes" title="Detalhes">
+      <customHeader>
+          <Toolbar>
+              <Button type="Back" press=".aoFecharDetalhes" />
+              <Title level="H3" text="{livro>/titulo}"/>
+          </Toolbar>
+      </customHeader>
+   </Dialog>
+
+</core:FragmentDefinition>

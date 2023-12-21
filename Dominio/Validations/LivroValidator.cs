@@ -23,7 +23,7 @@ namespace Dominio.Validations
                 .Matches(@"^[a-zA-Z\s.]+$").WithMessage(MensagensDeErro.ACEITA_APENAS_LETRAS_E_ESPACOS);
 
             RuleFor(x => x.DataDePublicao)
-                .GreaterThan(DateTime.Now).WithMessage(MensagensDeErro.DATA_MAIOR);
+                .LessThanOrEqualTo(DateTime.Now).WithMessage(MensagensDeErro.DATA_MAIOR);
 
             RuleFor(x => x.StatusDeProgresso)
                 .NotNull().WithMessage(MensagensDeErro.GeraErroCampoNulo("Status de Progresso"));
