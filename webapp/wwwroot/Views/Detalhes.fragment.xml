@@ -1,7 +1,8 @@
 <core:FragmentDefinition
-   xmlns="sap.m"
-   xmlns:core="sap.ui.core">
-
+  xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
    <Dialog id="fragmentoDeDetalhes" title="Detalhes">
       <customHeader>
           <Toolbar>
@@ -9,6 +10,58 @@
               <Title level="H3" text="{livro>/titulo}"/>
           </Toolbar>
       </customHeader>
+      <VBox class="sapUiSmallMargin">
+		<f:Form id="FormDisplay354"
+			editable="false">
+			<f:layout>
+				<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="4"
+					emptySpanL="4"
+					emptySpanM="4"
+					emptySpanS="0"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false" />
+			</f:layout>
+			<f:formContainers>
+				<f:FormContainer>
+					<f:formElements>
+						<f:FormElement label="Autor">
+							<f:fields>
+								<Text text="{livro>/autor}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Páginas">
+							<f:fields>
+								<Text text="{livro>/quantidadeDePaginas}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Gênero">
+							<f:fields>
+								<Text text="{livro>/genero}" />
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Data de publicação">
+							<f:fields>
+								<Text text="{livro>/dataDePublicao}"/>
+							</f:fields>
+						</f:FormElement>
+						<f:FormElement label="Status">
+							<f:fields>
+								<Text text="{livro>/statusDeProgresso}"/>
+							</f:fields>
+						</f:FormElement>
+					</f:formElements>
+				</f:FormContainer>
+			</f:formContainers>
+		</f:Form>
+	</VBox>
    </Dialog>
 
 </core:FragmentDefinition>
