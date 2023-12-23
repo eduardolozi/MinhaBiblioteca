@@ -1,11 +1,12 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/ui/model/json/JSONModel",
-  "sap/ui/core/Fragment"
-], (Controller, JSONModel, Fragment) => {
+  "../model/formatter"
+], (Controller, JSONModel, formatter) => {
   "use strict";
 
   return Controller.extend("webapp.Controllers.Listagem", {
+    formatter: formatter,
     onInit() {
       this._carregarLivros();
 
@@ -44,13 +45,52 @@ sap.ui.define([
     },
 
     aoPressionarLivroLidos(evt) {
-      let id = evt.getSource().getBindingContext("livrosLidos").getProperty("livroId");
-      this._aoAbrirDetalhes(id)
+      let id = evt
+        .getSource()
+        .getBindingContext("livrosLidos")
+        .getProperty("livroId");
+      this._aoAbrirDetalhes(id);
     },
 
     aoPressionarLivroParaLer(evt) {
-      let id = evt.getSource().getBindingContext("livrosParaLer").getProperty("livroId");
-      this._aoAbrirDetalhes(id)
+      let id = evt
+        .getSource()
+        .getBindingContext("livrosParaLer")
+        .getProperty("livroId");
+      this._aoAbrirDetalhes(id);
+    },
+
+    aoListaReceberLivroNaoLido(evt) {
+      let itemArrastado = evt.getSource();
+      // let itemArrastado = evt.getParameter("draggedControl");
+      let contextItemArrastado = itemArrastado.getBindingContext("livrosParaLer");
+      if (!contextItemArrastado) return;
+
+      let tabelaDeLivrosLidos = this.getView().byId("listaDeLivrosLidos");
+      let modeloDaLista = tabelaDeLivrosLidos.getModel("livrosLidos");
+      modeloDaLista.setProperty(
+        "statusDeProgresso",
+        "true",
+        contextItemArrastado
+      );
+
+    },
+
+    aoListaReceberLivroLido(evt) {
+      let itemArrastado = evt.getSource();
+      // let itemArrastado = evt.getParameter("draggedControl");
+      console.log(itemArrastado)
+      let contextItemArrastado = itemArrastado.getBindingContext("livrosLidos");
+      if (!contextItemArrastado) return;
+      console.log(contextItemArrastado)
+      let tabelaDeLivrosLidos = this.getView().byId("listaDeLivrosParaLer");
+      let modeloDaLista = tabelaDeLivrosLidos.getModel("livrosParaLer");
+      console.log(modeloDaLista)
+      modeloDaLista.setProperty(
+        "statusDeProgresso",
+        false,
+        contextItemArrastado
+      );
     },
 
     _aoAbrirDetalhes(id) {
@@ -59,21 +99,24 @@ sap.ui.define([
       });
 
       fetch(`/api/Livros/${id}`)
-        .then(response => {
+        .then((response) => {
           return response.json();
         })
-        .then(response => {
-                  
+        .then((response) => {
           this.fragmentoDetalhes.setModel(new JSONModel(response), "livro");
-          this.fragmentoDetalhes.open()
+          this.fragmentoDetalhes.open();
         })
-        .catch(erro => {
+        .catch((erro) => {
           console.log(erro);
-        })
+        });
     },
 
     aoFecharDetalhes() {
       this.byId("fragmentoDeDetalhes").close();
+    },
+
+    aoPressionarBotaoDeCadastro() {
+      this.getOwnerComponent().getRouter().navTo("cadastroDeLivros");
     },
   });
 });

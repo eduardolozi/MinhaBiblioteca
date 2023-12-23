@@ -11,5 +11,6 @@ namespace Dominio.Models
         public GeneroEnum Genero { get; set; }
         public int QuantidadeDePaginas { get; set; }
         public bool StatusDeProgresso { get; set; }
+        public string? fotoDaCapa { get; set; }
     }
 }

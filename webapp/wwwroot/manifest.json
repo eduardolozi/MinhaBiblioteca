@@ -44,6 +44,27 @@
         "path": "webapp.Views",
         "controlId": "app",
         "controlAggregation": "pages"
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "listagem",
+        "target": "listagem"
+       },
+       {
+        "pattern": "cadastroDeLivros",
+        "name": "cadastroDeLivros",
+        "target": "cadastroDeLivros"
+       }
+      ],
+      "targets": {
+        "listagem": {
+          "id": "listagem",
+          "name": "Listagem"
+        },
+        "cadastroDeLivros": {
+          "id": "cadastroDeLivros",
+          "name": "CadastroDeLivros"
+        }
       }
     }
   }
