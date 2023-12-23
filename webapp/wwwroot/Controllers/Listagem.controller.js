@@ -25,8 +25,7 @@ sap.ui.define([
           return response.json();
         })
         .then((response) => {
-          const livrosJSON = Object.values(response);
-          const { lidos, paraLer } = livrosJSON.reduce(
+          const { lidos, paraLer } = response.reduce(
             (acc, livro) => {
               livro.statusDeProgresso
                 ? acc.lidos.push(livro)
@@ -44,53 +43,61 @@ sap.ui.define([
         });
     },
 
-    aoPressionarLivroLidos(evt) {
-      let id = evt
-        .getSource()
-        .getBindingContext("livrosLidos")
-        .getProperty("livroId");
-      this._aoAbrirDetalhes(id);
+    aoPressionarLivroLido(evt) {
+      // debugger
+      let modelo = evt.getSource().getBindingContext("livrosLidos");
+      let idDoLivro = modelo.getProperty("livroId");
+      this.getOwnerComponent().getRouter().navTo("detalhesDoLivro", {id: idDoLivro})
     },
 
     aoPressionarLivroParaLer(evt) {
       let id = evt
         .getSource()
-        .getBindingContext("livrosParaLer")
+        .getBindingContext("livrosParaLer") 
         .getProperty("livroId");
       this._aoAbrirDetalhes(id);
     },
 
+    onBeforeOpenContextMenu(evt) {
+      evt.getParameter("listItem").setSelected(true);
+    },
+
     aoListaReceberLivroNaoLido(evt) {
-      let itemArrastado = evt.getSource();
-      // let itemArrastado = evt.getParameter("draggedControl");
+      let itemArrastado = evt.getParameter("draggedControl");
       let contextItemArrastado = itemArrastado.getBindingContext("livrosParaLer");
+      let livro = contextItemArrastado.getObject();
       if (!contextItemArrastado) return;
 
+      contextItemArrastado.getModel().setProperty("statusDeProgresso", true, contextItemArrastado)
       let tabelaDeLivrosLidos = this.getView().byId("listaDeLivrosLidos");
-      let modeloDaLista = tabelaDeLivrosLidos.getModel("livrosLidos");
-      modeloDaLista.setProperty(
-        "statusDeProgresso",
-        "true",
-        contextItemArrastado
-      );
+      let modeloDeLivrosParaLer = contextItemArrastado.getModel();
+      let modeloDaListaDeLidos = tabelaDeLivrosLidos.getModel("livrosLidos");
 
+      modeloDeLivrosParaLer.getProperty("/").splice(contextItemArrastado.getPath().split("/")[1], 1)
+
+      modeloDaListaDeLidos.getProperty("/").push(livro);
+
+      modeloDaListaDeLidos.refresh()
+      modeloDeLivrosParaLer.refresh()
     },
 
     aoListaReceberLivroLido(evt) {
-      let itemArrastado = evt.getSource();
-      // let itemArrastado = evt.getParameter("draggedControl");
-      console.log(itemArrastado)
+      let itemArrastado = evt.getParameter("draggedControl");
       let contextItemArrastado = itemArrastado.getBindingContext("livrosLidos");
+      let livro = contextItemArrastado.getObject();
       if (!contextItemArrastado) return;
-      console.log(contextItemArrastado)
-      let tabelaDeLivrosLidos = this.getView().byId("listaDeLivrosParaLer");
-      let modeloDaLista = tabelaDeLivrosLidos.getModel("livrosParaLer");
-      console.log(modeloDaLista)
-      modeloDaLista.setProperty(
-        "statusDeProgresso",
-        false,
-        contextItemArrastado
-      );
+
+      contextItemArrastado.getModel().setProperty("statusDeProgresso", false, contextItemArrastado);
+      let tabelaDeLivrosParaLer = this.getView().byId("listaDeLivrosParaLer");
+      let modeloDeLivrosLidos = contextItemArrastado.getModel();
+      let modeloDeLivrosParaLer = tabelaDeLivrosParaLer.getModel("livrosParaLer");
+
+      modeloDeLivrosLidos.getProperty("/").splice(contextItemArrastado.getPath().split("/")[1], 1);
+
+      modeloDeLivrosParaLer.getProperty("/").push(livro);
+
+      modeloDeLivrosParaLer.refresh();
+      modeloDeLivrosLidos.refresh();
     },
 
     _aoAbrirDetalhes(id) {

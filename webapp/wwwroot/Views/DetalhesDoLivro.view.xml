@@ -1,0 +1,16 @@
+<mvc:View
+controllerName="webapp.Controllers.DetalhesDoLivro"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+  <Page id="detalhesDoLivro">
+    <customHeader>
+      <Toolbar>
+        <Button type="Back" press=".aoPressionarBotaoDeVoltar"/>
+        <Title text="DETALHES DO LIVRO"/>
+        <ToolbarSpacer/>
+        <Button icon="sap-icon://edit"/>
+        <Button icon="sap-icon://delete"/>
+      </Toolbar>
+    </customHeader>
+  </Page>
+</mvc:View>

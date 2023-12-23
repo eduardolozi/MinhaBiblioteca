@@ -33,6 +33,9 @@ namespace Dominio.Validations
 
             RuleFor(x => x.QuantidadeDePaginas)
                 .GreaterThan(49).WithMessage(MensagensDeErro.QTD_PAGINAS_INVALIDAS);
+
+            RuleFor(x => x.Avaliacao)
+                .IsInEnum().WithMessage(MensagensDeErro.AVALIACAO_NAO_EXISTENTE);
         }
 
     }

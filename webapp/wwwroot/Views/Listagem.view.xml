@@ -41,7 +41,7 @@
                         path: 'livrosLidos>fotoDaCapa',
                         formatter: '.formatter.formataFoto'
                       }"
-                      press=".aoPressionarLivroLidos"
+                      press=".aoPressionarLivroLido"
                       type="Navigation"/>
                   </items>
                   <layoutData>
@@ -53,8 +53,10 @@
         <FlexBox justifyContent="End" alignItems="Start" width="100%">
             <List id="listaDeLivrosParaLer"
                   headerText="Livros para ler"
+                  beforeOpenContextMenu="onBeforeOpenContextMenu"
                   items="{livrosParaLer>/}"
                   growing="true">
+
                   
                   <Title text="Livros para ler"/>
 

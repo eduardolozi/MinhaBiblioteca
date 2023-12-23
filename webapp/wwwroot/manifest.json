@@ -46,12 +46,17 @@
         "controlAggregation": "pages"
       },
       "routes": [{
-        "pattern": "",
+        "pattern": "pagina-principal",
         "name": "listagem",
         "target": "listagem"
        },
        {
-        "pattern": "cadastroDeLivros",
+        "pattern": "detalhes-do-livro/{id}",
+        "name": "detalhesDoLivro",
+        "target": "detalhesDoLivro"
+       },
+       {
+        "pattern": "cadastro-de-livros",
         "name": "cadastroDeLivros",
         "target": "cadastroDeLivros"
        }
@@ -60,6 +65,10 @@
         "listagem": {
           "id": "listagem",
           "name": "Listagem"
+        },
+        "detalhesDoLivro": {
+          "id": "detalhesDoLivro",
+          "name": "DetalhesDoLivro"
         },
         "cadastroDeLivros": {
           "id": "cadastroDeLivros",
