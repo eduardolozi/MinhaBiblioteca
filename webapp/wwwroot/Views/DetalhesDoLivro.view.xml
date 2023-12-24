@@ -12,5 +12,35 @@ xmlns:mvc="sap.ui.core.mvc">
         <Button icon="sap-icon://delete"/>
       </Toolbar>
     </customHeader>
+    <HBox class="sapUiLargeMarginBegin sapUiLargeMarginTop"> 
+      <VBox width="20%">
+        <Image src="https://m.media-amazon.com/images/I/612qhaGpu8L._AC_UF894,1000_QL80_.jpg" alt="Imagem da capa" width="100%" height="100%"/>
+        <RatingIndicator id="RI_M" maxValue="5" class=" sapUiSmallMarginTop sapUiSmallMarginBottom" value="4" tooltip="Rating Tooltip" />
+      </VBox>
+      <VBox class="sapUiMediumMarginBegin">
+        <Label design="Bold" text="Nome:"/>
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/titulo}"/>
+        <Toolbar width="100%" height="1px"/>
+
+        <Label design="Bold" class="sapUiSmallMarginTop" text="Autor:"/>
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/autor}"/>
+        <Toolbar width="100%" height="1px"/>
+        
+        <Label design="Bold" class="sapUiSmallMarginTop" text="Data de Publicação:"/>  
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/dataDePublicao}"/>
+        <Toolbar width="100%" height="1px"/>
+
+        <Label design="Bold" class="sapUiSmallMarginTop" text="Quantidade de Páginas:"/>  
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/quantidadeDePaginas}"/>
+        <Toolbar width="100%" height="1px"/>
+
+        <Label design="Bold" class="sapUiSmallMarginTop" text="Gênero:"/>  
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/genero}"/>
+        <Toolbar width="100%" height="1px"/>
+
+        <Label design="Bold" class="sapUiSmallMarginTop" text="Status de Progresso:"/>  
+        <Label class="sapUiTinyMarginTop sapUiTinyMarginBottom" text="{livro>/statusDeProgresso}"/>
+      </VBox>
+    </HBox>
   </Page>
 </mvc:View>

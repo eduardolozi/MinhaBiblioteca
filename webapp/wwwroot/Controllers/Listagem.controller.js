@@ -44,18 +44,17 @@ sap.ui.define([
     },
 
     aoPressionarLivroLido(evt) {
-      // debugger
       let modelo = evt.getSource().getBindingContext("livrosLidos");
       let idDoLivro = modelo.getProperty("livroId");
       this.getOwnerComponent().getRouter().navTo("detalhesDoLivro", {id: idDoLivro})
     },
 
     aoPressionarLivroParaLer(evt) {
-      let id = evt
-        .getSource()
-        .getBindingContext("livrosParaLer") 
-        .getProperty("livroId");
-      this._aoAbrirDetalhes(id);
+      let modelo = evt.getSource().getBindingContext("livrosParaLer");
+      let idDoLivro = modelo.getProperty("livroId");
+      this.getOwnerComponent()
+        .getRouter()
+        .navTo("detalhesDoLivro", { id: idDoLivro });
     },
 
     onBeforeOpenContextMenu(evt) {
