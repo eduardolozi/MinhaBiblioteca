@@ -5,11 +5,19 @@ sap.ui.define(
 
     return Controller.extend("webapp.Controller.DetalhesDoLivro", {
       onInit() {
+        const roteador = this.getOwnerComponent().getRouter();
+        const rotaDeDetalhes = "detalhesDoLivro";
+        roteador.getRoute(rotaDeDetalhes).attachPatternMatched(this._objetoCorrespondente, this);
         this._carregarLivroPorId()
       },
 
-      _carregarLivroPorId() {
-        let idDoLivro = 1;
+      _objetoCorrespondente(evt) {
+        const argumentos = "arguments";
+        let indiceDoLivro = window.decodeURIComponent(evt.getParameter(argumentos).id)
+        this._carregarLivroPorId(indiceDoLivro)
+      },
+
+      _carregarLivroPorId(idDoLivro) {
         const URL_API = `api/Livros/${idDoLivro}`;
 
         fetch(URL_API)
