@@ -44,6 +44,36 @@
         "path": "webapp.Views",
         "controlId": "app",
         "controlAggregation": "pages"
+      },
+      "routes": [{
+        "pattern": "pagina-principal",
+        "name": "listagem",
+        "target": "listagem"
+       },
+       {
+        "pattern": "detalhes-do-livro/{id}",
+        "name": "detalhesDoLivro",
+        "target": "detalhesDoLivro"
+       },
+       {
+        "pattern": "cadastro-de-livros",
+        "name": "cadastroDeLivros",
+        "target": "cadastroDeLivros"
+       }
+      ],
+      "targets": {
+        "listagem": {
+          "id": "listagem",
+          "name": "Listagem"
+        },
+        "detalhesDoLivro": {
+          "id": "detalhesDoLivro",
+          "name": "DetalhesDoLivro"
+        },
+        "cadastroDeLivros": {
+          "id": "cadastroDeLivros",
+          "name": "CadastroDeLivros"
+        }
       }
     }
   }

@@ -22,7 +22,7 @@ namespace Infra.Migrations
                     DataDePublicao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Genero = table.Column<int>(type: "int", nullable: false),
                     QuantidadeDePaginas = table.Column<int>(type: "int", nullable: false),
-                    StatusDeProgresso = table.Column<bool>(type: "bit", nullable: false)
+                    StatusDeProgresso = table.Column<bool>(type: "bit", nullable: false),
                 },
                 constraints: table =>
                 {

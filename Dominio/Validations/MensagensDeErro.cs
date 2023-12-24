@@ -15,6 +15,7 @@ namespace Dominio.Validations
         public static string QTD_PAGINAS_INVALIDAS = "Quantidade de páginas inválidas (Mínimo: 49).\n";
         public static string DATA_MAIOR = $"Data inválida (Máxima: {DateTime.UtcNow.ToShortDateString}).\n";
         public static string GENERO_NAO_EXISTENTE = $"Gênero não existente.\n";
+        public static string AVALIACAO_NAO_EXISTENTE = $"Avaliação não existente.\n";
 
         public static string GeraErroCampoVazio(string campo)
         {

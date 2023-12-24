@@ -1,15 +1,16 @@
 <mvc:View
   controllerName="webapp.Controllers.Listagem"
   xmlns="sap.m"
+  xmlns:dnd="sap.ui.core.dnd"
   xmlns:mvc="sap.ui.core.mvc"
 >
   <App id="app">
-    <Page>
+    <Page id="listagem">
       <customHeader>
         <Toolbar>
           <Title text="KNOWLED" class="sapUiTinyMarginBegin"/>
           <ToolbarSpacer/>
-          <Button icon="sap-icon://add-coursebook" text="Adicionar livro"/>
+          <Button icon="sap-icon://add-coursebook" text="Adicionar livro" press=".aoPressionarBotaoDeCadastro"/>
         </Toolbar>
       </customHeader>
 
@@ -20,16 +21,27 @@
                   items="{livrosLidos>/}"
                   growing="true">
                   
-                  <Title text="Livros para ler"/>
-                  <!-- <OverflowToolbar>
-                    <SearchField width="50%"/>
-                    <Label icon="sap-icon://search"/>
-                  </OverflowToolbar> -->
+                  <Title text="Livros lidos"/>
+
+                  <dragDropConfig>
+                    <dnd:DragInfo
+                      groupName="lidosParaNaoLidos"
+                      sourceAggregation="items" />
+                    <dnd:DropInfo
+                      groupName="naoLidosParaLidos"
+                      drop="aoListaReceberLivroNaoLido" />
+                  </dragDropConfig>
                   <items>
                     <StandardListItem 
                       title="{livrosLidos>titulo}"
                       description="{livrosLidos>autor}"
-                      press=".aoPressionarLivroLidos"
+                      info="{livrosLidos>statusDeProgresso}"
+                      wrapping="true"
+                      icon="{
+                        path: 'livrosLidos>fotoDaCapa',
+                        formatter: '.formatter.formataFoto'
+                      }"
+                      press=".aoPressionarLivroLido"
                       type="Navigation"/>
                   </items>
                   <layoutData>
@@ -41,17 +53,30 @@
         <FlexBox justifyContent="End" alignItems="Start" width="100%">
             <List id="listaDeLivrosParaLer"
                   headerText="Livros para ler"
+                  beforeOpenContextMenu="onBeforeOpenContextMenu"
                   items="{livrosParaLer>/}"
                   growing="true">
+
                   
                   <Title text="Livros para ler"/>
-                  <!-- <OverflowToolbar>
-                    <SearchField width="50%"/>
-                  </OverflowToolbar> -->
+
+                  <dragDropConfig>
+                    <dnd:DragInfo
+                      groupName="naoLidosParaLidos"
+                      sourceAggregation="items" />
+                    <dnd:DropInfo
+                      groupName="lidosParaNaoLidos"
+                      drop="aoListaReceberLivroLido" />
+                  </dragDropConfig>
                   <items>
                     <StandardListItem 
                       title="{livrosParaLer>titulo}"
                       description="{livrosParaLer>autor}"
+                      info="{livrosParaLer>statusDeProgresso}"
+                      icon="{
+                        path: 'livrosParaLer>fotoDaCapa',
+                        formatter: '.formatter.formataFoto'
+                      }"
                       press=".aoPressionarLivroParaLer"
                       type="Navigation"/>
                   </items>
