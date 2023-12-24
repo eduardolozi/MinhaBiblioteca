@@ -9,7 +9,7 @@ namespace Infra.Repositories
 {
     public interface IRepository
     {
-        public List<Livro> ObterTodos();
+        public List<Livro> ObterTodos(string? titulo);
         public Livro ObterPorId(int id);
         public void Adicionar(Livro livro);
         public void Atualizar(Livro livro);

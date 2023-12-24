@@ -5,6 +5,7 @@ using FluentValidation.TestHelper;
 using Infra.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace webapp.Controllers
 {
@@ -20,11 +21,14 @@ namespace webapp.Controllers
         }
 
         [HttpGet]
-        public ActionResult<List<Livro>> ObterTodos()
+        public ActionResult<List<Livro>> ObterTodos([FromQuery] string? titulo)
         {
             try
             {
-                var livros = _repo.ObterTodos();
+                List<Livro> livros;
+                if (!string.IsNullOrEmpty(titulo)) livros = _repo.ObterTodos(titulo);
+                else livros = _repo.ObterTodos(null);
+                
                 return Ok(livros);
             }catch(Exception)
             {

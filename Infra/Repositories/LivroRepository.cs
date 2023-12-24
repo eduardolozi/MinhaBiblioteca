@@ -15,8 +15,15 @@ namespace Infra.Repositories
         public LivroRepository(LivroContext context) { 
             _context = context;
         }
-        public List<Livro> ObterTodos()
+        public List<Livro> ObterTodos(string? titulo)
         {
+            if(titulo != null)
+            {
+                var livro = from l in _context.Livros.ToList()
+                            where l.Titulo.ToLower().Contains(titulo.ToLower())
+                            select l;
+                return livro.ToList();
+            }
             return _context.Livros.ToList();
         }
         public Livro ObterPorId(int id)

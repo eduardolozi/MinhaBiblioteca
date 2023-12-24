@@ -1,6 +1,7 @@
 <mvc:View 
 controllerName="webapp.Controllers.CadastroDeLivros"
 xmlns="sap.m"
+displayBlock="true"
 xmlns:mvc="sap.ui.core.mvc"
 >
   <Page 
@@ -9,6 +10,36 @@ xmlns:mvc="sap.ui.core.mvc"
     textAlignment="Center" 
     showNavButton="true" 
     navButtonPress=".aoPressionarBotaoDeVoltar">
+
+    <Table id="tabelaLivros" items="{livros>/}">
+      <headerToolbar>
+        <Toolbar>
+          <Title text="Livros"/>
+          <ToolbarSpacer/>
+          <SearchField width="40%" search=".aoFiltrarLivro"/>
+        </Toolbar>
+      </headerToolbar>
+      <columns>
+        <Column hAlign="Center">
+          <Text text="Titulo"/>
+        </Column>
+        <Column hAlign="Center">
+          <Text text="Autor"/>
+        </Column>
+        <Column hAlign="Center">
+          <Text text="Data de publicacao"/>
+        </Column>
+      </columns>
+      <items>
+        <ColumnListItem>
+          <cells>
+            <Text text="{livros>titulo}"/>
+            <Text text="{livros>autor}"/>
+            <Text text="{livros>dataDePublicao}"/>
+          </cells>
+        </ColumnListItem>
+      </items>
+    </Table>
 
   </Page>
 </mvc:View>
