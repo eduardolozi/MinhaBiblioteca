@@ -40,5 +40,6 @@ Este design modular e organizado facilita a manutenção, teste e evolução do 
 ![Imagem da página principal](https://imgur.com/5hiUNWL.png)     
 A imagem acima mostra como é a página inicial do site. Contendo duas listas, cada uma sendo populada por um modelo JSON diferente que é filtrado usando a coluna de status (Lido/Nao Lido) através do Fetch.    
 Os 3 pontos em cada cabeçalho da lista exibem uma barra de pesquisa através do título, e essa pesquisa é feita através dos dados do banco, e não dos dados presentes na view. Evitando, assim, possíveis conflitos de dados.   
-Além disso, ao clicar em um item da lista, o usuário é redirecionado para a página de detalhes do livro selecionado. Como podemos ver a seguir:     
+Além disso, ao clicar em um item da lista, o usuário é redirecionado para a página de detalhes do livro selecionado. Como podemos ver a seguir:          
+<br>
 ![Imagem da página de detalhes](https://imgur.com/c4ldWSp.png) 
