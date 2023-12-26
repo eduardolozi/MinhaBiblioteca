@@ -16,73 +16,74 @@
 
       <FlexBox class="sapUiMediumMarginEnd sapUiMediumMarginTop sapUiMediumMarginBegin sapUiMediumMarginBottom">
         <FlexBox justifyContent="Start" alignItems="Start" width="100%" >
-            <List id="listaDeLivrosLidos"
-                  headerText="Livros lidos"
-                  items="{livrosLidos>/}"
-                  growing="true">
-                  
-                  <Title text="Livros lidos"/>
+            <List id="listaDeLivrosLidos" headerText="Livros lidos" items="{livrosLidos>/}" growing="true">
+              <infoToolbar>
+                <OverflowToolbar>
+                  <ToolbarSpacer/>
+                  <SearchField width="100%" placeholder="Buscar por título" search=".aoFiltrarLivroLido"/>
+                </OverflowToolbar>
+              </infoToolbar>
 
-                  <dragDropConfig>
-                    <dnd:DragInfo
-                      groupName="lidosParaNaoLidos"
-                      sourceAggregation="items" />
-                    <dnd:DropInfo
-                      groupName="naoLidosParaLidos"
-                      drop="aoListaReceberLivroNaoLido" />
-                  </dragDropConfig>
-                  <items>
-                    <StandardListItem 
-                      title="{livrosLidos>titulo}"
-                      description="{livrosLidos>autor}"
-                      info="{livrosLidos>statusDeProgresso}"
-                      wrapping="true"
-                      icon="{
-                        path: 'livrosLidos>fotoDaCapa',
-                        formatter: '.formatter.formataFoto'
-                      }"
-                      press=".aoPressionarLivroLido"
-                      type="Navigation"/>
-                  </items>
-                  <layoutData>
-                      <FlexItemData growFactor="0" baseSize="90%" />
-                  </layoutData>
+              <dragDropConfig>
+                <dnd:DragInfo
+                  groupName="lidosParaNaoLidos"
+                  sourceAggregation="items" />
+                <dnd:DropInfo
+                  groupName="naoLidosParaLidos"
+                  drop="aoListaReceberLivroNaoLido" />
+              </dragDropConfig>
+
+              <items>
+                <StandardListItem 
+                  title="{livrosLidos>titulo}"
+                  description="{livrosLidos>autor}"
+                  info="{livrosLidos>statusDeProgresso}"
+                  wrapping="true"
+                  icon="{
+                    path: 'livrosLidos>fotoDaCapa',
+                    formatter: '.formatter.formataFoto'
+                  }"
+                  press=".aoPressionarLivroLido"
+                  type="Navigation"/>
+              </items>
+
+              <layoutData>
+                  <FlexItemData growFactor="0" baseSize="90%" />
+              </layoutData>
             </List>
         </FlexBox>
 
         <FlexBox justifyContent="End" alignItems="Start" width="100%">
-            <List id="listaDeLivrosParaLer"
-                  headerText="Livros para ler"
-                  beforeOpenContextMenu="onBeforeOpenContextMenu"
-                  items="{livrosParaLer>/}"
-                  growing="true">
-
-                  
-                  <Title text="Livros para ler"/>
-
-                  <dragDropConfig>
-                    <dnd:DragInfo
-                      groupName="naoLidosParaLidos"
-                      sourceAggregation="items" />
-                    <dnd:DropInfo
-                      groupName="lidosParaNaoLidos"
-                      drop="aoListaReceberLivroLido" />
-                  </dragDropConfig>
-                  <items>
-                    <StandardListItem 
-                      title="{livrosParaLer>titulo}"
-                      description="{livrosParaLer>autor}"
-                      info="{livrosParaLer>statusDeProgresso}"
-                      icon="{
-                        path: 'livrosParaLer>fotoDaCapa',
-                        formatter: '.formatter.formataFoto'
-                      }"
-                      press=".aoPressionarLivroParaLer"
-                      type="Navigation"/>
-                  </items>
-                  <layoutData>
-                      <FlexItemData growFactor="0" baseSize="90%" />
-                  </layoutData>
+            <List id="listaDeLivrosParaLer" headerText="Livros para ler" items="{livrosParaLer>/}" growing="true">
+              <infoToolbar>
+                <OverflowToolbar>
+                  <ToolbarSpacer/>
+                  <SearchField width="100%" placeholder="Buscar por título" search=".aoFiltrarLivroParaLer"/>
+                </OverflowToolbar>
+              </infoToolbar>
+              <dragDropConfig>
+                <dnd:DragInfo
+                  groupName="naoLidosParaLidos"
+                  sourceAggregation="items" />
+                <dnd:DropInfo
+                  groupName="lidosParaNaoLidos"
+                  drop="aoListaReceberLivroLido" />
+              </dragDropConfig>
+              <items>
+                <StandardListItem 
+                  title="{livrosParaLer>titulo}"
+                  description="{livrosParaLer>autor}"
+                  info="{livrosParaLer>statusDeProgresso}"
+                  icon="{
+                    path: 'livrosParaLer>fotoDaCapa',
+                    formatter: '.formatter.formataFoto'
+                  }"
+                  press=".aoPressionarLivroParaLer"
+                  type="Navigation"/>
+              </items>
+              <layoutData>
+                  <FlexItemData growFactor="0" baseSize="90%" />
+              </layoutData>
             </List>
         </FlexBox>
       </FlexBox>

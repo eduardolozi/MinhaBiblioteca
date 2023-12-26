@@ -33,20 +33,15 @@ sap.ui.define(
         const consulta = evt.getParameter("query");
         const filtros = []; 
 
-        if (consulta == "") {
-          window.location.href = `/index.html#/cadastro-de-livros`;
-          this._aplicaFiltro(filtros)
-        }
-        else {
+        if(consulta) {
           this._carregarLivroPeloNome(consulta)
             .then((livros) => {
-              const newURL = `/index.html#/cadastro-delivros?titulo=${consulta}`;
-              window.location.href = newURL;
-              
               filtros.push(livros.map(livro => new Filter("titulo", FilterOperator.Contains, livro.titulo)));
               this._aplicaFiltro(filtros)
             }
           );          
+        } else {
+          this._aplicaFiltro(filtros)
         }
       },
 
