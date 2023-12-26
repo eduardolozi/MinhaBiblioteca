@@ -34,3 +34,7 @@ O projeto está organizado seguindo o padrão Clean Architecture, dividido em tr
    - Integração com as camadas de Domínio e Infraestrutura.
 
 Este design modular e organizado facilita a manutenção, teste e evolução do projeto, garantindo uma separação clara de responsabilidades entre as diferentes partes da aplicação.
+
+## IMAGENS DO PROJETO
+
+![Imagem da página principal](https://imgur.com/a/sPHuWvu)
