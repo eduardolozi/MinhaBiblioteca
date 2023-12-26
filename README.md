@@ -37,4 +37,4 @@ Este design modular e organizado facilita a manutenção, teste e evolução do 
 
 ## IMAGENS DO PROJETO
 
-![Imagem da página principal](https://imgur.com/5hiUNWL)
+![Imagem da página principal](https://imgur.com/5hiUNWL.png)
