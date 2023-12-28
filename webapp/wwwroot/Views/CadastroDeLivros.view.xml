@@ -1,6 +1,7 @@
 <mvc:View 
 controllerName="webapp.Controllers.CadastroDeLivros"
 xmlns="sap.m"
+xmlns:u="sap.ui.unified"
 displayBlock="true"
 xmlns:mvc="sap.ui.core.mvc"
 >
@@ -11,7 +12,63 @@ xmlns:mvc="sap.ui.core.mvc"
     showNavButton="true" 
     navButtonPress=".aoPressionarBotaoDeVoltar">
 
+    <FlexBox class="sapUiLargeMarginTop" alignItems="Center" justifyContent="Center">
+      <Panel width="600px">
+        <FlexBox direction="Row" justifyContent="Center">
+
+          <FlexBox direction="Column" class="sapUiLargeMarginEnd">
+            <Label class="sapUiMediumMarginTop" text="Título" design="Bold" labelFor="inputTitulo"/>
+            <Input id="inputTitulo" width="100%"/>
   
+            <Label class="sapUiMediumMarginTop" text="Autor" design="Bold" labelFor="inputAutor"/>
+            <Input id="inputAutor" width="100%"/>
+  
+            <Label class="sapUiMediumMarginTop" text="Número de Páginas" design="Bold" labelFor="inputPaginas"/>
+            <Input id="inputPaginas" width="100%"/>
+  
+            <Label class="sapUiMediumMarginTop" text="Gênero" design="Bold" labelFor="inputGenero"/>
+            <ComboBox id="inputGenero" width="100%"/>
+            
+            <Label class="sapUiMediumMarginTop" text="Data de Publicação" design="Bold" labelFor="inputDataPublicacao"/>
+            <DatePicker id="inputDataPublicacao" width="100%"/>
+  
+            <Label class="sapUiMediumMarginTop" text="Lido" design="Bold" labelFor="inputStatus"/>
+            <Switch id="inputStatus" type="AcceptReject" state="false">
+              <layoutData>
+                <FlexItemData growFactor="1" />
+              </layoutData>
+            </Switch>
+          </FlexBox>
+
+          <FlexBox direction="Column" class="sapUiLargeMarginBegin">
+            <Label class="sapUiMediumMarginTop sapUiTinyMarginBottom" text="Foto da Capa" design="Bold" labelFor="inputFoto"/>
+            <FlexBox direction="ColumnReverse">
+              <u:FileUploader 
+              id="inputFoto"
+              multiple="false" 
+              uploadUrl="upload/"
+              value=""
+              tooltip="Upload your file to the local server"
+              icon="sap-icon://add-photo" 
+              uploadliveChange="false"
+              sendXHR="true" 
+              useMultipart="false" 
+              fileType="JPG,JPEG,jpeg,jpg,PNG,png"/>
+              <Image id="fotoDoLivro" src="https://m.media-amazon.com/images/I/41SH-SvWPxL.jpg" width="100%" height="280px"/>
+            </FlexBox>
+
+            <Label class="sapUiMediumMarginTop" text="Avaliação" design="Bold" labelFor="inputAvaliacao"/>
+            <RatingIndicator id="inputAvaliacao" maxValue="5" class="" value="0" tooltip="Rating Tooltip" />
+
+            <FlexBox class="sapUiLargeMarginTop sapUiLargeMarginBegin" alignItems="End" justifyContent="End">
+              <Button class="sapUiSmallMarginEnd" text="Salvar"/>
+              <Button text="Cancelar"/>
+            </FlexBox>
+          </FlexBox>
+
+        </FlexBox>
+      </Panel>
+    </FlexBox>
 
   </Page>
 </mvc:View>
