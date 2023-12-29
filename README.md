@@ -35,18 +35,18 @@ O projeto está organizado seguindo o padrão Clean Architecture, dividido em tr
 
 Este design modular e organizado facilita a manutenção, teste e evolução do projeto, garantindo uma separação clara de responsabilidades entre as diferentes partes da aplicação.
 
-## IMAGENS DO PROJETO
-1. **Tela de Listagem**
+## IMAGENS DO PROJETO       
+1. **Tela de Listagem:**     
 ![Imagem da página principal](https://imgur.com/5hiUNWL.png)     
 A imagem acima mostra como é a página inicial do site. Contendo duas listas, cada uma sendo populada por um modelo JSON diferente que é filtrado usando a coluna de status (Lido/Nao Lido) através do Fetch.    
 Os 3 pontos em cada cabeçalho da lista exibem uma barra de pesquisa através do título, e essa pesquisa é feita através dos dados do banco, e não dos dados presentes na view. Evitando, assim, possíveis conflitos de dados. 
-<br>
-2. **Tela de Detalhes**  
+
+
+2. **Tela de Detalhes:**      
 Ao clicar em um item da lista, o usuário é redirecionado para a página de detalhes do livro selecionado. Como podemos ver a seguir:          
-<br>
-![Imagem da página de detalhes](https://imgur.com/c4ldWSp.png)    
-<br>
-3. **Tela de Cadastro**
-A tela de cadastro pode ser vista abaixo. E passará por validações em todos os seus campos, garantindo a segurança e consistência dos dados na parte do front-end. Que, juntando com a validação feita no .NET, permite que a aplicação seja mais segura e consistente. 
-<br>
+![Imagem da página de detalhes](https://imgur.com/c4ldWSp.png)     
+
+
+3. **Tela de Cadastro**       
+A tela de cadastro pode ser vista abaixo. E passará por validações em todos os seus campos, garantindo a segurança e consistência dos dados na parte do front-end. Que, juntando com a validação feita no .NET, permite que a aplicação seja mais segura e consistente.     
 ![Imagem da página de cadastro](https://i.imgur.com/TVlN8jL.png)
